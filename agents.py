@@ -6,12 +6,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = LLM(
-    model="gemini/gemini-1.5-flash",
-    temperature=0.2,
-    max_retries=3,
-    timeout=30,
-    base_delay=1,
-    max_delay=10
+    model="gemini/gemini-2.0-flash-exp",
+    temperature=0.4,
+    max_retries=5,
+    timeout=60,
+    base_delay=2,
+    max_delay=30,
+    exponential_base=2,
+    jitter=True
 )
 
 financial_health_analyzer = Agent(
