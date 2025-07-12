@@ -8,6 +8,10 @@ load_dotenv()
 llm = LLM(
     model="gemini/gemini-1.5-flash",
     temperature=0.2,
+    max_retries=3,
+    timeout=30,
+    base_delay=1,
+    max_delay=10
 )
 
 financial_health_analyzer = Agent(
